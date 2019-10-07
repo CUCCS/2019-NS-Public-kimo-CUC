@@ -81,4 +81,4 @@ ping attacker
 *  所有节点均可以访问互联网
 
 四台电脑均能ping通百度
-![](\image\15.JPG)
+![](image/15.JPG)
