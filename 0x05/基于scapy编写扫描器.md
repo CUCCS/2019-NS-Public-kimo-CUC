@@ -26,15 +26,15 @@
 
 本机IP 
 
-![image-20191113165837402](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113165837402.png)
+![image-20191113165837402](typora-user-images/本机IP.png)
 
 虚拟机IP
 
-![image-20191113170039236](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113170039236.png)
+![image-20191113170039236](typora-user-images/image-20191113170039236.png)
+两台电脑之间互相可以ping通
+ ![image-20191113162926017](typora-user-images/能ping通.png)
 
- ![image-20191113162926017](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113162926017.png)
-
-![image-20191113170204578](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113170204578.png)
+![image-20191113170204578](typora-user-images/能ping通2.png)
 
 端口控制指令：
 
@@ -81,27 +81,24 @@ elif (tcp_connect_scan_resp.getlayer(TCP).flags = 0x14):
 
 端口关闭和开启时的状态：
 
-![image-20191113165346963](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113165346963.png)
+![image-20191113165346963](typora-user-images/端口开放和关闭状态.png)
 
 1、开启状态：运行scan.py
 
-![image-20191113170400993](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113170400993.png)
-
-![image-20191113170559140](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113170559140.png)
+![image-20191113170400993](typora-user-images/开放11.png)
+![image-20191113170559140](typora-user-images/image-20191113170559140.png)
 
 客户端与服务器建立 TCP 连接要进行一次三次握手，如果进行了一次成功的三次握手，则说明端口开放。 
 
 2、关闭状态：
 
-![image-20191114090853658](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114090853658.png)
+![image-20191114090853658](typora-user-images/image-20191114090853658.png)
 
-![image-20191113212752928](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113212752928.png)
-
+![image-20191113212752928](typora-user-images/image-20191113212752928.png)
 3、过滤状态：
 
-![image-20191113213745650](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113213745650.png)
-
-![](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191113213710698.png)
+![image-20191113213745650](typora-user-images/image-20191113213551168.png)
+![](typora-user-images/过滤.png)
 
 ### TCP Xmas scan
 
@@ -141,22 +138,21 @@ elif(xmas_scan_resp.haslayer(ICMP)):
 
 解决过程
 
-![image-20191114091008984](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114091008984.png)
+![image-20191114091008984](typora-user-images/image-20191114091008984.png)
 
 优先执行上方的指令，在ACCEPT的指令之前会先DROP，所以无法回复包。
 
 解决方法：清除了DROP的指令
 
-![image-20191114091139811](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114091139811.png)
+![image-20191114091139811](typora-user-images/image-20191114091139811.png)
 
 处理完成后重新抓包：还是没收到回复……
 
 2、关闭状态
 
-![image-20191114091722345](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114091722345.png)
+![image-20191114091722345](typora-user-images/image-20191114091722345.png)
 
-![image-20191114091835510](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114091835510.png)
-
+![image-20191114091835510](typora-user-images/image-20191114091835510.png)
 3、过滤状态
 
 问题同开启状态
@@ -214,19 +210,19 @@ print udp_scan(dst_ip,dst_port,dst_timeout)
 
 1、开启状态
 
-![image-20191114095001208](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114095001208.png)（我也不知道为什么这么多包） 
+![image-20191114095001208](typora-user-images/image-20191114095001208.png)（我也不知道为什么这么多包） 
 
 2、关闭状态
 
-![image-20191114095358578](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114095358578.png)
+![image-20191114095358578](typora-user-images/image-20191114095358578.png)
 
-![image-20191114095521867](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114095521867.png)
+![image-20191114095521867](typora-user-images/image-20191114095521867.png)
 
 3、过滤状态
 
 要先打开53端口
 
-![image-20191114100151761](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114100151761.png)
+![image-20191114100151761](typora-user-images/image-20191114100120265.png)
 
-![image-20191114100120265](C:\Users\66459\AppData\Roaming\Typora\typora-user-images\image-20191114100120265.png)
+![image-20191114100120265](typora-user-images/image-20191114100151761.png)
 
